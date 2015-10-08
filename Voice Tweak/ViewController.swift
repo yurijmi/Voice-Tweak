@@ -54,14 +54,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
-    @IBAction func playTapped(sender: UIButton) {
+    @IBAction func playTapped(button: UIButton) {
         if self.audioPlayer == nil {
             setupAndPlay()
         } else {
             if self.audioPlayer!.playing {
                 self.audioPlayer!.stop()
                 
-                self.playButton.setTitle("PLAY", forState: UIControlState.Normal)
+                button.setTitle("PLAY", forState: UIControlState.Normal)
             } else {
                 setupAndPlay()
             }
