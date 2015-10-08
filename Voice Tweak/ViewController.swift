@@ -11,12 +11,15 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var speedLabel  : UILabel!
-    @IBOutlet weak var speedSlider : UISlider!
     @IBOutlet weak var loopSwitch  : UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    }
+    
+    @IBAction func sliderMoved(sender: UISlider) {
         
     }
 

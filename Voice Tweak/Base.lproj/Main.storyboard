@@ -45,6 +45,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.20000000000000001" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="VbS-iN-9cP">
                                 <rect key="frame" x="18" y="178" width="564" height="31"/>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="GI8-2W-WuM"/>
+                                </connections>
                             </slider>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SQa-xK-P28">
                                 <rect key="frame" x="531" y="238" width="51" height="31"/>
@@ -90,7 +93,6 @@
                     <connections>
                         <outlet property="loopSwitch" destination="SQa-xK-P28" id="WQF-tu-woa"/>
                         <outlet property="speedLabel" destination="aGi-iZ-dsq" id="DzJ-rX-U5f"/>
-                        <outlet property="speedSlider" destination="VbS-iN-9cP" id="SDr-tp-46e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
