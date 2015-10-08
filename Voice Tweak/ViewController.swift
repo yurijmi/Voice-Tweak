@@ -50,8 +50,20 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         } catch {}
     }
 
-    @IBAction func recordTapped(sender: UIButton) {
-        
+    @IBAction func recordTapped(button: UIButton) {
+        if self.audioRecorder!.recording {
+            self.audioRecorder!.stop()
+            
+            button.setTitle("RECORD", forState: UIControlState.Normal)
+        } else {
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+                
+                self.audioRecorder!.record()
+                
+                button.setTitle("STOP", forState: UIControlState.Normal)
+            } catch {}
+        }
     }
     
     @IBAction func playTapped(button: UIButton) {
