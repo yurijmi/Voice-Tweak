@@ -12,6 +12,7 @@ import AVFoundation
 class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var speedLabel  : UILabel!
+    @IBOutlet weak var speedSlider : UISlider!
     @IBOutlet weak var playButton  : UIButton!
     @IBOutlet weak var loopSwitch  : UISwitch!
     
@@ -20,10 +21,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-    }
-    
-    @IBAction func sliderMoved(sender: UISlider) {
         
     }
 
@@ -45,13 +42,31 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    @IBAction func sliderMoved(slider: UISlider) {
+        let speed = String(format: "%.1f", slider.value)
+        
+        self.speedLabel.text = "Speed \(speed)x"
+        
+        if self.audioPlayer != nil {
+            self.audioPlayer!.rate = slider.value
+        }
+    }
+    
     func setupAndPlay() {
         do {
             let path = NSBundle.mainBundle().pathForResource("mic_noise", ofType: "m4a")
             let url  = NSURL(fileURLWithPath: path!)
             
             self.audioPlayer = try AVAudioPlayer(contentsOfURL: url)
-            self.audioPlayer!.delegate = self
+            
+            self.audioPlayer!.enableRate = true
+            self.audioPlayer!.rate       = self.speedSlider.value
+            self.audioPlayer!.delegate   = self
+            
+            if self.loopSwitch.on {
+                self.audioPlayer!.numberOfLoops = -1
+            }
+            
             self.audioPlayer!.play()
             
             self.playButton.setTitle("STOP", forState: UIControlState.Normal)

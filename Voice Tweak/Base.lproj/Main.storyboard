@@ -94,6 +94,7 @@
                         <outlet property="loopSwitch" destination="SQa-xK-P28" id="WQF-tu-woa"/>
                         <outlet property="playButton" destination="Oue-EM-p56" id="vUS-2g-7xD"/>
                         <outlet property="speedLabel" destination="aGi-iZ-dsq" id="DzJ-rX-U5f"/>
+                        <outlet property="speedSlider" destination="VbS-iN-9cP" id="bwD-vw-Agz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
