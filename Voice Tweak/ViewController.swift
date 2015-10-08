@@ -92,10 +92,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func setupAndPlay() {
         do {
-            let path = NSBundle.mainBundle().pathForResource("mic_noise", ofType: "m4a")
-            let url  = NSURL(fileURLWithPath: path!)
-            
-            self.audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+            self.audioPlayer = try AVAudioPlayer(contentsOfURL: self.audioURL!)
             
             self.audioPlayer!.enableRate = true
             self.audioPlayer!.rate       = self.speedSlider.value
