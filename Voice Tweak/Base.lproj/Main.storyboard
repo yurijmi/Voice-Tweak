@@ -33,6 +33,9 @@
                                 <state key="normal" title="RECORD">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="recordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z6G-0N-w4Z"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed 1.0x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGi-iZ-dsq">
                                 <rect key="frame" x="20" y="142" width="560" height="21"/>
@@ -56,6 +59,9 @@
                                 <rect key="frame" x="20" y="230" width="432" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="PLAY"/>
+                                <connections>
+                                    <action selector="playTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b7e-2z-ViR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -81,6 +87,11 @@
                             <constraint firstItem="wsI-YX-5Xg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="z4I-jx-glw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loopSwitch" destination="SQa-xK-P28" id="WQF-tu-woa"/>
+                        <outlet property="speedLabel" destination="aGi-iZ-dsq" id="DzJ-rX-U5f"/>
+                        <outlet property="speedSlider" destination="VbS-iN-9cP" id="SDr-tp-46e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
