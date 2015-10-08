@@ -12,6 +12,7 @@
 		509E37DE1BC6556C003F97AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509E37DC1BC6556C003F97AD /* Main.storyboard */; };
 		509E37E01BC6556C003F97AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 509E37DF1BC6556C003F97AD /* Assets.xcassets */; };
 		509E37E31BC6556C003F97AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509E37E11BC6556C003F97AD /* LaunchScreen.storyboard */; };
+		509E37EB1BC660EF003F97AD /* mic_noise.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 509E37EA1BC660EF003F97AD /* mic_noise.m4a */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		509E37DF1BC6556C003F97AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		509E37E21BC6556C003F97AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		509E37E41BC6556C003F97AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		509E37EA1BC660EF003F97AD /* mic_noise.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = mic_noise.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		509E37D71BC6556C003F97AD /* Voice Tweak */ = {
 			isa = PBXGroup;
 			children = (
+				509E37EA1BC660EF003F97AD /* mic_noise.m4a */,
 				509E37D81BC6556C003F97AD /* AppDelegate.swift */,
 				509E37DA1BC6556C003F97AD /* ViewController.swift */,
 				509E37DC1BC6556C003F97AD /* Main.storyboard */,
@@ -125,6 +128,7 @@
 				509E37E31BC6556C003F97AD /* LaunchScreen.storyboard in Resources */,
 				509E37E01BC6556C003F97AD /* Assets.xcassets in Resources */,
 				509E37DE1BC6556C003F97AD /* Main.storyboard in Resources */,
+				509E37EB1BC660EF003F97AD /* mic_noise.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
