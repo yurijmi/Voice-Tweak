@@ -16,12 +16,38 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var playButton  : UIButton!
     @IBOutlet weak var loopSwitch  : UISwitch!
     
-    var audioPlayer : AVAudioPlayer?
+    var audioRecorder : AVAudioRecorder?
+    var audioPlayer   : AVAudioPlayer?
+    var audioURL      : NSURL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        setupAudioRecorder()
+    }
+    
+    func setupAudioRecorder() {
+        do {
+            let basePath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first!
+            let pathComponents = [basePath, "recorded.m4a"]
+            
+            self.audioURL = NSURL.fileURLWithPathComponents(pathComponents)
+            
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try session.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
+            try session.setActive(true)
+            
+            var recordSettings = [String : AnyObject]()
+                recordSettings[AVFormatIDKey]         = Int(kAudioFormatMPEG4AAC)
+                recordSettings[AVSampleRateKey]       = 44100.0
+                recordSettings[AVNumberOfChannelsKey] = 2
+            
+            self.audioRecorder = try AVAudioRecorder(URL: self.audioURL!, settings: recordSettings)
+            self.audioRecorder!.meteringEnabled = true
+            
+            self.audioRecorder!.prepareToRecord()
+        } catch {}
     }
 
     @IBAction func recordTapped(sender: UIButton) {
